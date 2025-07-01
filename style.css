@@ -1,0 +1,140 @@
+@media (max-width: 768px) {
+  #board {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container1,
+  .container2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    padding: 50px 60px;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+}
+
+
+* {
+ margin: 0;
+ padding: 0;
+}
+
+header {
+  background-color: #ffd700;
+  padding: 40px 10px;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+
+#timer {
+   display: flex;
+   justify-content: center;
+   margin: 2%;
+   top: 50px;
+   font-size: xx-large;
+   font-family: "Pixelify Sans", sans-serif;
+}
+
+.game-title { 
+font-family: "Pixelify Sans", sans-serif;
+font-size: xx-large;
+}
+
+header img {
+    width: 80px;
+    
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    gap: 20px;   
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#board img {
+width: 100%;
+height: 100%;
+object-fit: fill;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   
+
+}
+
+.card {
+    background-color: white;
+    background-image: url(assets/poker-card-2.png);
+    padding: 90px 80px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-size: cover;
+    background-position: center;
+
+}
+.btn {
+  width: 200px;
+    
+}
+.reset-btn {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.corner-img {
+  position: fixed;
+  bottom: -30px;            
+  right: -40px;               
+  width:300px;           
+  height: auto;
+  transform: rotate(-30deg);
+}
+
+#info-btn-container {
+   margin-left: auto;
+   font-family: "Pixelify Sans", sans-serif;
+   
+}
+
+#info-btn {
+    width: 65px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: solid black 2px;
+    background-color: #ffd700;
+    color: black;
+}
+
+#info-btn:hover {
+    color: #ffd700;
+    background-color: white;
+    transition: 0.5s;
+}
+
+
+
+
+
+
