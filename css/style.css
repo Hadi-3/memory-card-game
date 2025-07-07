@@ -87,7 +87,7 @@ object-fit: fill;
 }
 
 .card-front {
-  background-image: url(/assets/poker-card-2.png);
+  background-image: url(../assets/poker-card-2.png);
   background-color: white;
 }
 
