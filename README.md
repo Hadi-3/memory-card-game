@@ -10,7 +10,7 @@ The goal is to match all pairs **before the 60-second timer runs out!**
 
 ## 🚀 Getting Started
 
-👉 **Play it here:** [https://hadi-3.github.io/memory-card-game/](https://your-memory-game-link.com)
+👉 **Play it here:** [PixelPairs](https://hadi-3.github.io/memory-card-game/)
 
 👉 **Planning Materials:**
 
