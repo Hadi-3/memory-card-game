@@ -36,6 +36,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        
 <h6>🕹️ Instructions:</h3>
   <ul>
     <li>Click on any two cards to flip them over.</li>
@@ -48,8 +49,8 @@
   <ul>
     <li>You have <strong>60 seconds</strong> to match all the card pairs.</li>
     <li>The timer starts as soon as you flip your <strong>first card</strong>.</li>
-    <li>If you match all pairs before time runs out — <span>you win! 🎉</span></li>
-    <li>If time runs out before you finish — <span>you lose! 😢</span></li>
+    <li>If you match all pairs before time runs out — <span id="win-info">you win! 🎉</span></li>
+    <li>If time runs out before you finish — <span id="lose-info">you lose! 😢</span></li>
   </ul>
 
       </div>
@@ -65,7 +66,7 @@
 </header>
 
 <div id="timer">
-    <p>Timer:</p>
+    <p>Timer: 60s</p>
 </div>
 
 <div id="board">
@@ -97,7 +98,7 @@
         <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-            <img src="assets/heart.png" alt="Crown" />
+            <img src="assets/heart.png" alt="Heart" />
           </div>
         </div>
       </div>
@@ -108,7 +109,7 @@
         <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-            <img src="assets/heart.png" alt="Crown" />
+            <img src="assets/heart.png" alt="Heart" />
           </div>
         </div>
       </div>
@@ -121,7 +122,7 @@
         <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-            <img src="assets/treasure.png" alt="Crown" />
+            <img src="assets/treasure.png" alt="treasure" />
           </div>
         </div>
       </div>
@@ -132,7 +133,7 @@
         <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-            <img src="assets/treasure.png" alt="Crown" />
+            <img src="assets/treasure.png" alt="treasure" />
           </div>
         </div>
       </div>
@@ -143,7 +144,7 @@
         <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-            <img src="assets/sword.png" alt="Crown" />
+            <img src="assets/sword.png" alt="Sword" />
           </div>
         </div>
       </div>
@@ -154,7 +155,7 @@
         <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-            <img src="assets/sword.png" alt="Crown" />
+            <img src="assets/sword.png" alt="Sword" />
           </div>
         </div>
       </div>
@@ -163,12 +164,11 @@
 </div>
 
 
-
 <div class="reset-btn">
 <button type="button" class="btn btn-danger">Restart</button>
 </div>
 
-<img class="corner-img" src="assets/cards.png" alt="">
+<img class="corner-img" src="assets/cards.png" alt="Cards">
 
 
 

@@ -152,6 +152,15 @@ object-fit: fill;
     transition: 0.5s;
 }
 
+#win-info {
+color: green;
+font-weight: bold;
+}
+
+#lose-info {
+color: red;
+font-weight: bold;
+}
 
 
 

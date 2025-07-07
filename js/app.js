@@ -5,13 +5,17 @@ const imgPairs = [...imgNames, ...imgNames]
 /*---------- Variables (state) ---------*/
 let timeLeft = 60;
 let flippedCards = [];
-let numOfPairs = 0
-let gameEnd = false
+let numOfPairs = 0;
+let gameEnd = false;
 let hasGameStarted = false;
+let lock = false;
+let intervalId;
+
 /*----- Cached Element References  -----*/
 timeEl = document.querySelector('#timer')
 allCard = document.querySelectorAll('.card')
 resetBtnEl = document.querySelector('.reset-btn')
+
 /*-------------- Functions -------------*/
 
 function init() {
@@ -49,33 +53,62 @@ card.setAttribute('data-picture' , imgName);
 }
 
 function gameTime() {
-  document.getElementById("timer").innerHTML = `Timer: ${timeLeft--}s`;
-const intervalId = setInterval(() => {
-    if (timeLeft >= 0) {
- document.getElementById("timer").innerHTML = `Timer: ${timeLeft--}s`;
+  timeEl.innerHTML = `Timer: ${timeLeft}s`;
+
+  intervalId = setInterval(() => {
+    if (gameEnd) {
+      clearInterval(intervalId);
+      return;
+    }
+
+    timeLeft--;
     
-} else if (timeLeft < 0) {
-    document.getElementById("timer").innerHTML = 'You lose !'
-    gameEnd = true
+    if (timeLeft >= 0 && numOfPairs < 4) {
+      timeEl.innerHTML = `Timer: ${timeLeft}s`;
+    }
 
-}
-   if(numOfPairs === 4) {
-    document.getElementById("timer").innerHTML = 'You win !'
-    gameEnd = true
-} 
-}, 1000)
+    if (timeLeft === 0 && numOfPairs < 4 && !gameEnd) {
+      timeEl.innerHTML = 'You lose !';
+      timeEl.style.color = 'red';
+      gameEnd = true;
+      clearInterval(intervalId);
+    }
 
+    if (numOfPairs === 4 && !gameEnd) {
+      timeEl.innerHTML = 'You win !';
+      timeEl.style.color = 'green';
+      gameEnd = true;
+      clearInterval(intervalId);
+    }
+  }, 1000);
 }
+
  
 function reset() {
-resetBtnEl.addEventListener('click', function(){
-  window.location.reload();
-  return false;
-});
+  resetBtnEl.addEventListener('click', () => {
+
+    clearInterval(intervalId);
+
+    timeLeft = 60;
+    flippedCards = [];
+    numOfPairs = 0;
+    gameEnd = false;
+    hasGameStarted = false;
+    lock = false;
+
+    timeEl.innerHTML = `Timer: 60s`;
+    timeEl.style.color = '';
+
+    shuffleCards(imgPairs);
+
+    allCard.forEach(card => {
+    card.classList.remove('flipped');
+    });
+  });
 }
 
 function checkCards(card) {
-  if (gameEnd || card.classList.contains('flipped')) return;
+  if (gameEnd || card.classList.contains('flipped') || lock) return;
   card.classList.add('flipped');
     flippedCards.push(card)
 
@@ -87,11 +120,14 @@ if (first === second) {
     numOfPairs++
     
 } else {
+
+  lock = true
   
       setTimeout(() => {
         flippedCards[0].classList.remove('flipped');
         flippedCards[1].classList.remove('flipped');
         flippedCards = [];
+        lock = false
       }, 800);
 }
 }
@@ -99,18 +135,6 @@ if (first === second) {
 }
 
 
-init()
-
-
-
+init();
 
 /*----------- Event Listeners ----------*/
-
-
-
-
- /* WHAT YOUR GAME IS
- WHAT YOUR CHALANGE
-WHAT YOU LEARN
-ANY ADVICE ?
- */
