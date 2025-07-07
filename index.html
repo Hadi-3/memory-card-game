@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -36,7 +36,22 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+<h6>🕹️ Instructions:</h3>
+  <ul>
+    <li>Click on any two cards to flip them over.</li>
+    <li>If the cards match, they stay flipped.</li>
+    <li>If they don't match, they will flip back after a moment—try to remember their positions!</li>
+    <li>Keep flipping and matching pairs as fast as you can.</li>
+  </ul>
+
+  <h6>⏳ Timer Rules:</h3>
+  <ul>
+    <li>You have <strong>60 seconds</strong> to match all the card pairs.</li>
+    <li>The timer starts as soon as you flip your <strong>first card</strong>.</li>
+    <li>If you match all pairs before time runs out — <span>you win! 🎉</span></li>
+    <li>If time runs out before you finish — <span>you lose! 😢</span></li>
+  </ul>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -50,115 +65,103 @@
 </header>
 
 <div id="timer">
-    <p>Timer: 02:00</p>
+    <p>Timer:</p>
 </div>
 
 <div id="board">
   <div class="container1">
-    <div class="card" onclick="this.classList.toggle('flipped')">
+    <div class="card" data-picture="crown">
       <div class="card-inner">
-        <div class="card-front">
-      </div>
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-        </div>
+            <img src="assets/crown.png" alt="Crown" />
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="card" onclick="this.classList.toggle('flipped')">
-          <div class="card-inner">
-        <div class="card-front">
-        </div>
+    <div class="card" data-picture="crown">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/crown.png" alt="Crown" />
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="card" onclick="this.classList.toggle('flipped')">
-  <div class="card-inner">
-        <div class="card-front">
-        </div>
+    <div class="card" data-picture="heart">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/heart.png" alt="Crown" />
+          </div>
         </div>
       </div>
-
     </div>
 
-    <div class="card" onclick="this.classList.toggle('flipped')">
-  <div class="card-inner">
-        <div class="card-front">
-        </div>
+    <div class="card" data-picture="heart">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/heart.png" alt="Crown" />
+          </div>
         </div>
       </div>
-
     </div>
-
   </div>
 
   <div class="container2">
-
-      <div class="card" onclick="this.classList.toggle('flipped')">
-  <div class="card-inner">
-        <div class="card-front">
-        </div>
+    <div class="card" data-picture="treasure">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/treasure.png" alt="Crown" />
+          </div>
         </div>
       </div>
-
     </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-  <div class="card-inner">
-        <div class="card-front">
-        </div>
+
+    <div class="card" data-picture="treasure">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/treasure.png" alt="Crown" />
+          </div>
         </div>
       </div>
-
     </div>
-      <div class="card" onclick="this.classList.toggle('flipped')">
-  <div class="card-inner">
-        <div class="card-front">
-        </div>
+
+    <div class="card" data-picture="sword">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/sword.png" alt="Crown" />
+          </div>
         </div>
       </div>
-
     </div>
-        <div class="card" onclick="this.classList.toggle('flipped')">
-  <div class="card-inner">
-        <div class="card-front">
-        </div>
+
+    <div class="card" data-picture="sword">
+      <div class="card-inner">
+        <div class="card-front"></div>
         <div class="card-back">
           <div class="image-wrapper">
-        <img src="assets/crown.png" alt="Crown">
-      </div>
+            <img src="assets/sword.png" alt="Crown" />
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+
 
 
 <div class="reset-btn">
